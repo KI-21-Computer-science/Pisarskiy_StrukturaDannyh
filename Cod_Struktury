@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+//Сделано Дмитрием Писарским, КИ-21.
+struct ThisIsAStruct { //Создание структуры ThisIsAStruct.
+    int s;
+    float t;
+};
+
+int main() {
+    int chs;//Switch-case для выбора дальнейшего действия структуры.
+    cout << "Enter your choice (1 or 2): ";
+    cin >> chs;
+
+    switch (chs) {
+    case 1: {
+        ThisIsAStruct amogus; //Создание объекта с помощью структуры.
+        amogus.s = 14;
+        amogus.t = sqrt(amogus.s);
+
+        cout << "This is a " << amogus.s << ", and its square root is " << amogus.t << endl;
+        break;
+    }
+    case 2: {
+        ThisIsAStruct sus; //Ещё одно создание объекта с помощью структуры.
+        sus.t = 14;
+        sus.s = sus.t * sus.t;
+        cout << "This is a " << sus.t << ", and its square number is " << sus.s << endl;
+        break;
+    }
+    default:
+    std::string r = "start https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    system(r.c_str());
+        break;
+    }
+
+    return 0;
+}
