@@ -2,11 +2,11 @@
 #include <string>
 #include <cmath>
 using namespace std;
-
-struct ThisIsAStruct { // Создание структуры
+//Сделано Писарским Дмитрием, КИ-21.
+struct ThisIsAStruct { // Создание структуры.
     int s;
     float t;
-    ThisIsAStruct* next; // Указывает на следующий элемент списка
+    ThisIsAStruct* next; // Указывает на следующий элемент списка.
 };
 
 int main() {
@@ -16,14 +16,14 @@ int main() {
 
     switch (chs) {
     case 1: {
-        ThisIsAStruct* head = new ThisIsAStruct; // Создаётся голова списка с помощью оператора new
+        ThisIsAStruct* head = new ThisIsAStruct; // Создаётся голова списка с помощью оператора new.
         head->s = 14;
         head->t = sqrt(head->s);
-        head->next = nullptr; //Нулевая константа
+        head->next = nullptr; //Нулевая константа.
 
         cout << "This is a " << head->s << ", and its square root is " << head->t << endl;
 
-        delete head; // Оператор delete освобождает память
+        delete head; // Оператор delete освобождает память.
         break;
     }
     case 2: {
@@ -34,7 +34,7 @@ int main() {
 
         cout << "This is a " << head->t << ", and its square number is " << head->s << endl;
 
-        delete head; // Процесс повторяется
+        delete head; // Процесс повторяется.
         break;
     }
     default:
