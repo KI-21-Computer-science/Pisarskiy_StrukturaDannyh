@@ -2,38 +2,47 @@
 #include <string>
 #include <cmath>
 using namespace std;
-//Сделано Дмитрием Писарским, КИ-21.
-struct ThisIsAStruct { //Создание структуры ThisIsAStruct.
+
+struct ThisIsAStruct { // Создание структуры
     int s;
     float t;
+    ThisIsAStruct* next; // Указывает на следующий элемент списка
 };
 
 int main() {
-    int chs;//Switch-case для выбора дальнейшего действия структуры.
+    int chs;
     cout << "Enter your choice (1 or 2): ";
     cin >> chs;
 
     switch (chs) {
     case 1: {
-        ThisIsAStruct amogus; //Создание объекта с помощью структуры.
-        amogus.s = 14;
-        amogus.t = sqrt(amogus.s);
+        ThisIsAStruct* head = new ThisIsAStruct; // Создаётся голова списка с помощью оператора new
+        head->s = 14;
+        head->t = sqrt(head->s);
+        head->next = nullptr; //Нулевая константа
 
-        cout << "This is a " << amogus.s << ", and its square root is " << amogus.t << endl;
+        cout << "This is a " << head->s << ", and its square root is " << head->t << endl;
+
+        delete head; // Оператор delete освобождает память
         break;
     }
     case 2: {
-        ThisIsAStruct sus; //Ещё одно создание объекта с помощью структуры.
-        sus.t = 14;
-        sus.s = sus.t * sus.t;
-        cout << "This is a " << sus.t << ", and its square number is " << sus.s << endl;
+        ThisIsAStruct* head = new ThisIsAStruct;
+        head->t = 14;
+        head->s = head->t * head->t;
+        head->next = nullptr;
+
+        cout << "This is a " << head->t << ", and its square number is " << head->s << endl;
+
+        delete head; // Процесс повторяется
         break;
     }
     default:
-    std::string r = "start https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-    system(r.c_str());
-        break;
+        std::string r = "start https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        system(r.c_str());
+        break; // Не писать числа кроме 1 или 2! Я предупреждал!
     }
 
     return 0;
 }
+
